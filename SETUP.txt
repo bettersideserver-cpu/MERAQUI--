@@ -1,0 +1,36 @@
+MERAQUI - GOOGLE SHEETS SITE VISIT CONNECTION
+
+1. Google Sheet tab names MUST be exactly:
+   Enquiry_Sheet
+   Visit_Form
+
+2. Visit_Form row 1:
+   Timestamp | Name | Phone | Preferred Date | Preferred Time
+
+3. Open Google Apps Script attached to this spreadsheet.
+4. Replace the old Code.gs with the Code.gs included in this project.
+5. Save.
+6. Deploy > Manage deployments > Edit the Web app.
+7. Execute as: Me
+8. Who has access: Anyone
+9. Deploy the new version.
+
+10. The website already uses this Web App URL:
+https://script.google.com/macros/s/AKfycbwe1sV2oR9iL5E0XAcO1Dsdkz_CBD7ss9mLDzjkUSTngQZiTda9RDy762W8JpUnNzaKmA/exec
+
+The site visit form sends:
+- type: siteVisit
+- name
+- phone
+- date
+- time
+
+The Apps Script also has a fallback that recognizes date + time bookings, so an older cached website build will still be routed to Visit_Form.
+
+Existing enquiries continue to go to Enquiry_Sheet.
+
+
+SECOND SUBMISSION FIX:
+- Site Visit form resets after a successful booking and has a Book another site visit button.
+- Closing and reopening the Site Visit modal also resets it.
+- Enquiry form resets its mutation and fields after a successful submission, so a second enquiry can be submitted without refreshing.
